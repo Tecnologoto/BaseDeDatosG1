@@ -67,7 +67,17 @@ docker run -d --name Server-SqlG1 \
 -e "ACCEPT_EULA=Y" \
 -e "MSSQL_SA_PASSWORD=SqlSrv_2026_Strong!" \
 mcr.microsoft.com/mssql/server:2022-latest
- 
+
+ó
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" \
+-p 1450:1433 --name SQLServerG1 \
+-d -v v-sqlserverG1:/var/opt/mssql/data \
+d01cc45
+
+ó
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd"    -u 0    -p 1450:1433 --name SQLServerG1    -d -v v-sqlserverg1:/var/opt/mssql/data    d01cc45
 ´´´
 
 ## Comandos Docker
@@ -87,7 +97,7 @@ mcr.microsoft.com/mssql/server:2022-latest
 | **docker run** | _Nombra un contenedor_ |
 | **docker stop nombre_contenedor o ID** | _Detiene el contenedor_ |
 | **docker start nombre_contenedor o ID** | _Inicia el contenedor_ |
-| **docker rm -f nombre o ID** | _Elimina contenedor aunque esté en ejecición_ |
+| **docker rm -f nombre o ID** | _Elimina contenedor aunque esté en ejecución_ |
 | **docker volume ls** | _Mostrar los volumenes que existen en docker_ |
 
 
