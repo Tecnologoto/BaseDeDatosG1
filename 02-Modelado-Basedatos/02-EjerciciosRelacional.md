@@ -24,10 +24,20 @@
 ## Modelo Relacional
 ![Inscripción](../img/Relacional/Ejercicio3.jpg)
 
-4. Ejercicio 3. Pedidos
+4. Ejercicio 4. Pedidos
 
 ## Modelo E-R
 ![Pedidos](../img/E%20-%20R/Ejercicio4.png)
 
 ## Modelo Relacional
 ![Pedidos](../img/Relacional/Ejercicio4.jpg)
+
+5. Ejercicio 5. Departamentos
+
+## Modelo E-R
+![Departamento](../img/E%20-%20R/Ejercicio5.png)
+
+## Modelo Relacional
+![Departamento](../img/E%20-%20R/Ejercicio5.1.jpg)
+![Departamento](../img/E%20-%20R/Ejercicio5.2.jpg)
+

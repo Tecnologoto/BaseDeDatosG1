@@ -7,7 +7,7 @@ Se registra la información de los pacientes en un hospital
 
 > De los paciente se almacena
 - Nombre
-- Fecha de nacm¿imiento
+- Fecha de nacimimiento
 
 >De un expediente médico se almacena:
 - Número de expediente
@@ -54,7 +54,7 @@ Se debe realizar lo siguiente
 
 ## Resultado modelo E-R
 
-![Hospital](../img/E%20-%20R/Ejercicio2.png)
+![Profesor](../img/E%20-%20R/Ejercicio2.png)
 
 ---
 # Ejercicio tres
@@ -89,7 +89,7 @@ Se debe realizar lo siguiente
 
 ## Resultado modelo E-R
 
-![Hospital](../img/E%20-%20R/Ejercicio3.png)
+![Inscripcion](../img/E%20-%20R/Ejercicio3.png)
 
 ---
 # Ejercicio cuatro
@@ -123,3 +123,45 @@ Una empresa encargada de realizar venta de productos:
 8. El detalle de pedido no existe sin producto
 9. El detalle almacena cantidad y precio de venta
 
+![Pedidos](../img/E%20-%20R/Ejercicio4.png)
+
+
+--
+## Ejercicio cinco
+
+Una compañía está organizada en departamentos:
+
+> Cada departamento tiene
+- Nombre único
+- Número único
+- Supervisor
+- Tiene diversas localidades
+
+> Un departamento maneja varios proyectos, los cuales tienen
+- Nombre único
+- Número único
+- Localidad
+
+> De los empleados almacenamos
+- Nombre
+- Número de seguro social
+- Dirección
+- Salario
+- Género
+- Fecha de nacimiento
+
+> Cada empleado tiene un dependiente con propósito de apoyo, que tiene
+- Nombre
+- Género
+- Fecha de nacimiento
+- Tipo de relación
+
+> Reglas del negocio
+1. Un empleado es asignado a un departamento
+2. Un empleado puede trabajar en varios proyectos
+3. Un departamento no controla un único proyecto, pero un proyecto es controlado por un único proyecto
+4. Se registra el número de horas a la semana que un empleado trabaja en un proyecto
+5. Se registra un supervisor directo de cada empleado, que a su vez, el supervisor, también es un empleado
+6. Se registra la fecha de inicio en la que un supervisor administra un departamento
+
+![Departamento](../img/E%20-%20R/Ejercicio5.png)

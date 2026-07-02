@@ -1,4 +1,4 @@
-# Diccionario de datos de la base de datos del control escolar
+# Diccionario de datos de la base de datos del control escolar (ejercicio 3)
 
 1. Información general
 
@@ -110,3 +110,7 @@ Almacena información de los estudiantes
 | RN-06    | La calificación debe estar entre 0.0 y 10.0     |
 
 9. Diagrama relacional
+
+## Modelo relacional
+
+![Inscripción](../img/Relacional/Ejercicio3.jpg)
