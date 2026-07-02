@@ -38,6 +38,6 @@
 ![Departamento](../img/E%20-%20R/Ejercicio5.png)
 
 ## Modelo Relacional
-![Departamento](../img/E%20-%20R/Ejercicio5.1.jpg)
-![Departamento](../img/E%20-%20R/Ejercicio5.2.jpg)
+![Departamento](../img/Relacional/Ejercicio5.1.jpg)
+![Departamento](../img/Relacional/Ejercicio5.2.jpg)
 
