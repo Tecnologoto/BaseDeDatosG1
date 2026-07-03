@@ -41,3 +41,10 @@
 ![Departamento](../img/Relacional/Ejercicio5.1.jpg)
 ![Departamento](../img/Relacional/Ejercicio5.2.jpg)
 
+6. Ejercicio 6. Control escolar
+
+## Modelo E-R
+![Departamento](../img/E%20-%20R/Ejercicio6.png)
+
+## Modelo Relacional
+![Departamento](../img/Relacional/Ejercicio6.jpg)

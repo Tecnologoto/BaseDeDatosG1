@@ -1,14 +1,14 @@
-# Diccionario de datos de la base de datos del control escolar (ejercicio 3)
+# Diccionario de datos de la base de datos del control escolar (ejemplo)
 
 1. Información general
 
 | Elemento | Valor |
-|-----------|-----------|
-| Proyecto    | Control Escolar    |
-| Versión    | 1.0    |
-| Fecha    | Junio 2026    |
-| Elaboró    | Lic. Patricio Fernando Panales Nolasco    |
-| SGBD    | SQLServer    |
+|-----------|------|
+| Proyecto | Control Escolar |
+| Versión | 1.0 |
+| Fecha | Junio 2026 |
+| Elaboró | Lic. Patricio Fernando Panales Nolasco |
+| SGBD | SQLServer |
 
 2. Descripción del sistema de base de datos 
 
@@ -25,14 +25,14 @@ Permite controlar la oferta académica y la inscripción de estudiantes
 3. Catálogo de restricciones utilizadas
 
 | Código | Significado |
-|-----------|-----------|
-| PK    | Primary Key    |
-| FK    | Foreign Key    |
-| NN    | Not Null    |
-| UQ    | Unique    |
-| AI    | Auto Increment    |
-| CK    | Check    |
-| DF    | Default    |
+|----------|----------|
+| PK    | Primary Key |
+| FK    | Foreign Key |
+| NN    | Not Null |
+| UQ    | Unique |
+| AI    | Auto Increment |
+| CK    | Check |
+| DF    | Default |
 
 4. Diccionario de datos
 
@@ -44,15 +44,16 @@ Almacena las carrera ofertadas por la universidad
 
 | Campo | Tipo | Longitud | Restricciones | Descripción |
 |-----------|-----------|-----------|-----------|-----------|
-| id_carrera    | INT    | -    | PK, AI, NN    | Identificador único de la carrera    |
-| nombre    | VARCHAR    | 100    | UQ, NN    | Nombre de la carrera   |
-| duración_cuatrimestre    | INT    | -    | NN, CK(>0)    | Nombre de la carrera   |
+| id_carrera | INT | - | PK, AI, NN | Identificador único de la carrera |
+| nombre | VARCHAR | 100 | UQ, NN | Nombre de la carrera |
+| duración_cuatrimestre | INT | - | NN, CK(>0) | Nombre de la carrera |
 
 ## Tabla: Alumnos
 
 **Descripción**
 
 Almacena información de los estudiantes
+
 | Campo | Tipo | Longitud | Restricciones | Descripción |
 |-----------|-----------|-----------|-----------|-----------|
 | id_alumno    | INT    | -    | PK, AI, NN    | Identificador único del alumno    |
@@ -110,7 +111,3 @@ Almacena información de los estudiantes
 | RN-06    | La calificación debe estar entre 0.0 y 10.0     |
 
 9. Diagrama relacional
-
-## Modelo relacional
-
-![Inscripción](../img/Relacional/Ejercicio3.jpg)

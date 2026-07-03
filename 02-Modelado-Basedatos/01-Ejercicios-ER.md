@@ -123,6 +123,8 @@ Una empresa encargada de realizar venta de productos:
 8. El detalle de pedido no existe sin producto
 9. El detalle almacena cantidad y precio de venta
 
+## Resultado modelo E-R
+
 ![Pedidos](../img/E%20-%20R/Ejercicio4.png)
 
 
@@ -163,5 +165,7 @@ Una compañía está organizada en departamentos:
 4. Se registra el número de horas a la semana que un empleado trabaja en un proyecto
 5. Se registra un supervisor directo de cada empleado, que a su vez, el supervisor, también es un empleado
 6. Se registra la fecha de inicio en la que un supervisor administra un departamento
+
+## Resultado modelo E-R
 
 ![Departamento](../img/E%20-%20R/Ejercicio5.png)
