@@ -28,7 +28,7 @@ GO
 DROP TABLE alumno;
 GO
 
-/*INSERT INTO alumno
+INSERT INTO alumno
 VALUES (1,'Domingo', 'Sarabia', 'Mendez', '1942-03-14', 'domingo@gomingo.com');
 
 INSERT INTO alumno
@@ -123,7 +123,7 @@ FROM categoria;
 
 DROP TABLE categoria;
 GO
-*/
+
 
 -- Restricciones check
 -- Primera forma de construcción (no se usa, porque no podemos manipular)
@@ -417,3 +417,4 @@ WHERE proveedor_id = 3;
 
 --TODO:  Realizar ejercicio completo de costrucción de un diagrama relacional aplicando las restricciones
 -- y se continua con ALTER y DROP
+

@@ -100,3 +100,14 @@ La razón es que funciona de forma consistente en **SQLServer**, ***MySQL** y es
 - uq_cliente_correo_electronico
 - ck_producto_precio
 - df_cliente_activo
+
+
+##Alter table
+
+Permite modificar una tabla existente (en este caso de nuestro uso)
+
+- Agregar columnas
+- Eliminar columnas
+- Agregar restricciones
+- Eliminar restricciones
+ 
