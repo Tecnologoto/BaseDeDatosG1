@@ -6,17 +6,28 @@
 
 > Comandos para cada imágen
 
+-Descargar imagen de tutorial de Docker
+
+´´´
+docker pull docker/getting-started
+´´´
+-Descargar imagen de MariaDB
+
+```
+docker pull mariadb
+```
+
 -Descargar imagen de Postgres
 
 ```
 docker pull postgres:14.22-trixie
 ```
 
--Descargar imagen de tutorial de Docker
+-Descargar imagen de SQL
 
-´´´
-docker pull docker/getting-started
-´´´
+```
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+```
 
 ## Creación de contenedores
 
@@ -39,45 +50,41 @@ docker run -d -p 80:80 d7933
 ### Contenedor MariaDB sin Volumen
 
 ´´´
-docker run -d --name Server-MariadbG1 -p 3343:3306 -e MARIADB_ROOT_PASSWORD=123456 e0236 
+docker run -d --name Server-MariadbG1 -p 3343:3306 -e MARIADB_ROOT_PASSWORD=123456 628f228f0fd5
+
+Se debe agregar al final el ID de la imagen, con los primeros 5 digitos es suficiente
 ´´´
 
 ### Contenedor MariaDB con Volumen
 
 ´´´
 docker volume create v-mariadbG1
-docker run -d --name Server-MariadbG1 -p 3343:3306 -e MARIADB_ROOT_PASSWORD=123456 -v v-mariadbG1:/var/lib/mysql e0236 
+docker run -d --name Server-MariadbG1 -p 3343:3306 -e MARIADB_ROOT_PASSWORD=123456 -v v-mariadbG1:/var/lib/mysql 628f228f0fd5
 ´´´
 
 ### Contenedor Postgres con Volumen
 
 ´´´
 docker volume create v-postgresG1
-docker run -d --name Server-PostgresG1 -p \
-5455:5432 -e POSTGRES_PASSWORD=123456 -v v-postgresG1:/var/lib/postgresql/data \
-bbb88
+docker run -d --name Server-PostgresG1 -p 5455:5432 -e POSTGRES_PASSWORD=123456 -v v-postgresG1:/var/lib/postgresql/data eba8ddbdd837
+´´´
+
+### Contenedor SQLServer sin Volumen
+
+´´´
+docker run -d --name Server-SqlG1 \
+-p 1433:1433 \
+-e "ACCEPT_EULA=Y" \
+-e "MSSQL_SA_PASSWORD=SqlSrv_2026_Strong!" \
+mcr.microsoft.com/mssql/server:2022-latest
 ´´´
 
 ### Contenedor SQLServer con Volumen
 
 ´´´
 docker volume create v-sqlserverG1
-docker run -d --name Server-SqlG1 \
--p 1433:1433 \
--e "ACCEPT_EULA=Y" \
--e "MSSQL_SA_PASSWORD=SqlSrv_2026_Strong!" \
-mcr.microsoft.com/mssql/server:2022-latest
 
-ó
-
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" \
--p 1450:1433 --name SQLServerG1 \
--d -v v-sqlserverG1:/var/opt/mssql/data \
-d01cc45
-
-ó
-
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd"    -u 0    -p 1450:1433 --name SQLServerG1    -d -v v-sqlserverg1:/var/opt/mssql/data    d01cc45
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" -u 0 -p 1450:1433 --name SQLServerG1 -d -v v-sqlserverg1:/var/opt/mssql/data fc010e5c9554
 ´´´
 
 ## Comandos Docker
