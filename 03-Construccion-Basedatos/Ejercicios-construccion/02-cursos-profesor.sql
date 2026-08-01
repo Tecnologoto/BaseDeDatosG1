@@ -13,7 +13,7 @@ CREATE TABLE profesor(
     PRIMARY KEY,
     nombre VARCHAR(20) NOT NULL,
     apellido_paterno VARCHAR(15) NOT NULL,
-    apellido_materno VARCHAR(15),
+    apellido_materno VARCHAR(15)
 );
 GO 
 

@@ -71,6 +71,7 @@ CREATE TABLE representante(
 	FOREIGN KEY(representante_id_jefe)
 	REFERENCES representante (representante_id)
 );
+GO
 
 -- TABLA PEDIDOS
 CREATE TABLE pedido (
@@ -89,6 +90,7 @@ CREATE TABLE pedido (
 	FOREIGN KEY (representante_id)
 	REFERENCES representante(representante_id)
 );
+GO
 
 -- AGREGAR LA FOREIGN KEY A LA TABLA CLIENTE QUE VIENE DE REPRESENTANTE
 ALTER TABLE cliente
@@ -122,3 +124,4 @@ CREATE TABLE detalle_pedido(
 	FOREIGN KEY (producto_id, fabricante_id)
 	REFERENCES producto(producto_id, fabricante_id)
 );
+GO

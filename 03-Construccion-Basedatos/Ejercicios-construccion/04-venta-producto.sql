@@ -6,54 +6,53 @@ GO
 USE venta_producto;
 GO
 
--- PRIMERO SE HACE LA QUE NO TIENE FOREIGN KEY
--- TABLA CLIENTE
+-- TABLA CLIENTE (Sin foreign keys)
 CREATE TABLE Cliente(
-    cliente_id INT NOT NULL IDENTITY(1,1)
-    CONSTRAINT pk_cliente
-    PRIMARY KEY,
-
+    cliente_id INT NOT NULL IDENTITY(1,1),
     empresa VARCHAR(30) NOT NULL,
-    rfc VARCHAR(13) NOT NULL
-    CONSTRAINT uq_cliente_rfc
-    UNIQUE
-);
+    rfc VARCHAR(13) NOT NULL,
 
--- TABLA PRODUCTO
+    CONSTRAINT pk_cliente PRIMARY KEY (cliente_id),
+    CONSTRAINT uq_cliente_rfc UNIQUE (rfc)
+);
+GO
+
+-- TABLA PRODUCTO (Sin foreign keys)
 CREATE TABLE Producto(
-    producto_id INT NOT NULL IDENTITY(1,1)
-    CONSTRAINT pk_producto
-    PRIMARY KEY,
-
+    producto_id INT NOT NULL IDENTITY(1,1),
     nombre VARCHAR(30) NOT NULL,
-    precio DECIMAL(10,2) NOT NULL
-    CONSTRAINT ck_producto_precio
-    CHECK (precio > 0)
-);
+    precio DECIMAL(10,2) NOT NULL,
 
---TABLA PEDIDO
+    CONSTRAINT pk_producto PRIMARY KEY (producto_id),
+    CONSTRAINT ck_producto_precio CHECK (precio > 0)
+);
+GO
+
+-- TABLA PEDIDO (Depende de Cliente)
 CREATE TABLE Pedido(
-    pedido_id INT NOT NULL IDENTITY(1,1)
-    CONSTRAINT pk_pedido
-    PRIMARY KEY,
+    pedido_id INT NOT NULL IDENTITY(1,1),
+    cliente_id INT NOT NULL,
+    fecha DATETIME NOT NULL,
 
-    cliente_id INT NOT NULL
-    CONSTRAINT fk_pedido_cliente
-    FOREIGN KEY REFERENCES Cliente(cliente_id),
-    fecha DATETIME NOT NULL
+    CONSTRAINT pk_pedido PRIMARY KEY (pedido_id),
+    CONSTRAINT fk_pedido_cliente FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)
 );
+GO
 
---TABLA TIENE
+-- TABLA TIENE / DETALLE (Depende de Pedido y Producto)
 CREATE TABLE Tiene(
-    tiene_id INT NOT NULL IDENTITY(1,1)
-    CONSTRAINT pk_tiene
-    PRIMARY KEY,
+    tiene_id INT NOT NULL IDENTITY(1,1),
+    pedido_id INT NOT NULL,
+    producto_id INT NOT NULL,
 
-    pedido_id INT NOT NULL
-    CONSTRAINT fk_tiene_pedido
-    FOREIGN KEY REFERENCES Pedido(pedido_id),
-
-    producto_id INT NOT NULL
-    CONSTRAINT fk_tiene_producto
-    FOREIGN KEY REFERENCES Producto(producto_id),
+    CONSTRAINT pk_tiene PRIMARY KEY (tiene_id),
+    CONSTRAINT fk_tiene_pedido FOREIGN KEY (pedido_id) REFERENCES Pedido(pedido_id),
+    CONSTRAINT fk_tiene_producto FOREIGN KEY (producto_id) REFERENCES Producto(producto_id)
 );
+GO
+
+-- CONSULTAS DE VERIFICACIÓN
+SELECT * FROM Cliente;
+SELECT * FROM Producto;
+SELECT * FROM Pedido;
+SELECT * FROM Tiene;

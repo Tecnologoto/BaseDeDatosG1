@@ -29,6 +29,10 @@ CREATE TABLE Expediente (
     expediente_id CHAR(5) NOT NULL,
     paciente_id CHAR(5) NOT NULL,
     fecha_apertura DATE NOT NULL,
+    tipo_sangre VARCHAR(3) NOT NULL,
+
+    CONSTRAINT ck_expediente_tipo_sangre
+	CHECK (tipo_sangre IN ('A+','A-','B+','B-','AB+','AB-','O+','O-')),
 
     CONSTRAINT pk_expediente
     PRIMARY KEY (expediente_id),
