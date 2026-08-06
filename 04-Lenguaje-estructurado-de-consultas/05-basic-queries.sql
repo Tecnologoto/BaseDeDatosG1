@@ -144,3 +144,29 @@ FROM productos AS p;
 / división
 % módulo o residuo
 =======================*/
+
+SELECT
+	e.nombre,
+	e.apellido_paterno,
+	e.salario AS salario_anual,
+	(salario*12) AS salario_anual
+
+FROM empleado AS e;
+GO
+
+/*SELECCIONAR EL DETALLE DE LAS VENTAS, MOSTRANDO 
+EL NÚMERO DE VENTAS, CANTIDAD, PRECIO, DESCUENTO Y 
+CALCULAR EL IMPORTE BRUTO (CANTIDAD*PRECIO). TAMBIÉN
+DESEAMOS CALCULAR EL IMPORTE CON DESCUENTO
+(IMPORTE_BRUTO*DESCUENTO/100) Y EL IMPORTE NETO
+(IMPORTE_BRUTO*1-EL DESCUENTO/100)*/
+
+SELECT
+	dv.id_venta AS #venta,
+	dv.cantidad AS #cantidad_vendida,
+	dv.precio AS [precio de venta],
+	dv.descuento AS 'descuento de venta',
+	dv.cantidad * dv.precio AS importe_bruto,
+	(dv.cantidad * dv.precio) / 100.0 AS importe_descuento,
+	(dv.cantidad * dv.precio) * (1 - descuento / 100) AS importe_neto
+FROM detalle_ventas AS dv;
